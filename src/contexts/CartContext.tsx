@@ -11,22 +11,24 @@ interface CartContextType {
   getItemCount: () => number;
   subtotal: number;
   tax: number;
-  deliveryFee: number;
+  specialDiscount: number;
+  couponDiscount: number;
   total: number;
-  setDeliveryFee: (fee: number) => void;
+  applyCoupon: (code: string) => boolean;
+  couponApplied: string;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const TAX_RATE = 0.08; // 8% tax
-const DEFAULT_DELIVERY_FEE = 40;
 
 /**
  * Cart Provider component that manages cart state and operations
  */
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useLocalStorage<CartItem[]>('silver-spoon-cart', []);
-  const [deliveryFee, setDeliveryFee] = useLocalStorage<number>('silver-spoon-delivery-fee', DEFAULT_DELIVERY_FEE);
+  const [couponApplied, setCouponApplied] = useLocalStorage<string>('silver-spoon-coupon', '');
+  const [specialDiscountRate] = useLocalStorage<number>('silver-spoon-special-discount', Math.random() < 0.5 ? 0.03 : 0.05);
 
   /**
    * Calculate total price for a cart item including options
@@ -139,14 +141,27 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [items]);
 
   /**
+   * Apply coupon code
+   */
+  const applyCoupon = useCallback((code: string): boolean => {
+    if (code.toUpperCase() === 'SILVER10' && !couponApplied) {
+      setCouponApplied(code.toUpperCase());
+      return true;
+    }
+    return false;
+  }, [couponApplied, setCouponApplied]);
+
+  /**
    * Calculate cart totals
    */
-  const { subtotal, tax, total } = useMemo(() => {
+  const { subtotal, tax, specialDiscount, couponDiscount, total } = useMemo(() => {
     const subtotal = items.reduce((sum, item) => sum + item.totalPrice, 0);
     const tax = subtotal * TAX_RATE;
-    const total = subtotal + tax + deliveryFee;
-    return { subtotal, tax, total };
-  }, [items, deliveryFee]);
+    const specialDiscount = subtotal * specialDiscountRate;
+    const couponDiscount = couponApplied ? subtotal * 0.10 : 0;
+    const total = subtotal + tax - specialDiscount - couponDiscount;
+    return { subtotal, tax, specialDiscount, couponDiscount, total };
+  }, [items, specialDiscountRate, couponApplied]);
 
   const value: CartContextType = {
     items,
@@ -157,9 +172,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     getItemCount,
     subtotal,
     tax,
-    deliveryFee,
+    specialDiscount,
+    couponDiscount,
     total,
-    setDeliveryFee,
+    applyCoupon,
+    couponApplied,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
