@@ -1,0 +1,323 @@
+[
+  {
+    "id": "m001",
+    "name": "Margherita Pizza",
+    "category": "Main Course",
+    "price": 249,
+    "veg": true,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=400&fit=crop",
+    "short": "Classic cheese & basil",
+    "description": "12-inch stone-baked Margherita with fresh mozzarella, San Marzano tomatoes, and aromatic basil. Drizzled with extra virgin olive oil.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Size",
+        "choices": [
+          { "label": "Regular (12\")", "price": 0 },
+          { "label": "Large (16\")", "price": 80 }
+        ]
+      },
+      {
+        "name": "Crust",
+        "choices": [
+          { "label": "Thin", "price": 0 },
+          { "label": "Thick", "price": 30 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m002",
+    "name": "Chicken Tikka Masala",
+    "category": "Main Course",
+    "price": 349,
+    "veg": false,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=400&fit=crop",
+    "short": "Creamy tomato curry with tender chicken",
+    "description": "Succulent tandoor-grilled chicken in a rich, creamy tomato-based curry with aromatic spices. Served with basmati rice or naan.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Spice Level",
+        "choices": [
+          { "label": "Mild", "price": 0 },
+          { "label": "Medium", "price": 0 },
+          { "label": "Hot", "price": 0 }
+        ]
+      },
+      {
+        "name": "Side",
+        "choices": [
+          { "label": "Naan", "price": 0 },
+          { "label": "Rice", "price": 0 },
+          { "label": "Both", "price": 40 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m003",
+    "name": "Caesar Salad",
+    "category": "Starters",
+    "price": 199,
+    "veg": true,
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop",
+    "short": "Crispy romaine with parmesan",
+    "description": "Fresh romaine lettuce tossed with homemade Caesar dressing, crispy croutons, and shaved parmesan cheese.",
+    "options": [
+      {
+        "name": "Add Protein",
+        "choices": [
+          { "label": "None", "price": 0 },
+          { "label": "Grilled Chicken", "price": 80 },
+          { "label": "Grilled Shrimp", "price": 120 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m004",
+    "name": "Paneer Tikka",
+    "category": "Starters",
+    "price": 229,
+    "veg": true,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&h=400&fit=crop",
+    "short": "Grilled cottage cheese skewers",
+    "description": "Marinated cottage cheese cubes grilled to perfection with bell peppers and onions, served with mint chutney.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Portion",
+        "choices": [
+          { "label": "Half (6 pcs)", "price": 0 },
+          { "label": "Full (12 pcs)", "price": 100 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m005",
+    "name": "Crispy Chicken Wings",
+    "category": "Starters",
+    "price": 279,
+    "veg": false,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=600&h=400&fit=crop",
+    "short": "Spicy buffalo-style wings",
+    "description": "Crispy fried chicken wings tossed in your choice of sauce, served with ranch dip and celery sticks.",
+    "options": [
+      {
+        "name": "Sauce",
+        "choices": [
+          { "label": "Buffalo", "price": 0 },
+          { "label": "BBQ", "price": 0 },
+          { "label": "Honey Garlic", "price": 0 },
+          { "label": "Plain", "price": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m006",
+    "name": "Spaghetti Carbonara",
+    "category": "Main Course",
+    "price": 329,
+    "veg": false,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=400&fit=crop",
+    "short": "Creamy pasta with bacon",
+    "description": "Traditional Italian pasta with crispy bacon, egg yolk, parmesan cheese, and black pepper in a rich cream sauce.",
+    "options": [
+      {
+        "name": "Size",
+        "choices": [
+          { "label": "Regular", "price": 0 },
+          { "label": "Large", "price": 70 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m007",
+    "name": "Grilled Salmon",
+    "category": "Main Course",
+    "price": 499,
+    "veg": false,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&h=400&fit=crop",
+    "short": "Atlantic salmon with herbs",
+    "description": "Fresh Atlantic salmon fillet grilled to perfection, served with roasted vegetables and lemon butter sauce.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Cooking",
+        "choices": [
+          { "label": "Medium", "price": 0 },
+          { "label": "Medium Well", "price": 0 },
+          { "label": "Well Done", "price": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "m008",
+    "name": "Vegetarian Buddha Bowl",
+    "category": "Main Course",
+    "price": 299,
+    "veg": true,
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop",
+    "short": "Wholesome grain & veggie bowl",
+    "description": "Nutritious bowl with quinoa, roasted vegetables, chickpeas, avocado, and tahini dressing. A healthy and delicious option.",
+    "options": [
+      {
+        "name": "Protein",
+        "choices": [
+          { "label": "Chickpeas", "price": 0 },
+          { "label": "Tofu", "price": 30 },
+          { "label": "Falafel", "price": 50 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d001",
+    "name": "Chocolate Lava Cake",
+    "category": "Desserts",
+    "price": 179,
+    "veg": true,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&h=400&fit=crop",
+    "short": "Warm molten chocolate center",
+    "description": "Decadent chocolate cake with a molten chocolate center, served warm with vanilla ice cream.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Add-on",
+        "choices": [
+          { "label": "None", "price": 0 },
+          { "label": "Extra Ice Cream", "price": 40 },
+          { "label": "Whipped Cream", "price": 30 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d002",
+    "name": "Tiramisu",
+    "category": "Desserts",
+    "price": 199,
+    "veg": true,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=400&fit=crop",
+    "short": "Classic Italian coffee dessert",
+    "description": "Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.",
+    "options": []
+  },
+  {
+    "id": "d003",
+    "name": "Fruit Cheesecake",
+    "category": "Desserts",
+    "price": 189,
+    "veg": true,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1533134242443-d4ea90594913?w=600&h=400&fit=crop",
+    "short": "Creamy cheesecake with berries",
+    "description": "Rich and creamy New York-style cheesecake topped with fresh mixed berries and berry compote.",
+    "options": []
+  },
+  {
+    "id": "dr001",
+    "name": "Fresh Orange Juice",
+    "category": "Drinks",
+    "price": 99,
+    "veg": true,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&h=400&fit=crop",
+    "short": "Freshly squeezed orange juice",
+    "description": "Freshly squeezed orange juice packed with vitamin C. No added sugar or preservatives.",
+    "options": [
+      {
+        "name": "Size",
+        "choices": [
+          { "label": "Regular (250ml)", "price": 0 },
+          { "label": "Large (400ml)", "price": 40 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dr002",
+    "name": "Mango Smoothie",
+    "category": "Drinks",
+    "price": 129,
+    "veg": true,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=400&fit=crop",
+    "short": "Thick & creamy mango smoothie",
+    "description": "Thick and creamy smoothie made with fresh mangoes, yogurt, and a touch of honey.",
+    "popular": true,
+    "options": [
+      {
+        "name": "Size",
+        "choices": [
+          { "label": "Regular (300ml)", "price": 0 },
+          { "label": "Large (500ml)", "price": 50 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dr003",
+    "name": "Iced Caramel Latte",
+    "category": "Drinks",
+    "price": 149,
+    "veg": true,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=400&fit=crop",
+    "short": "Sweet & creamy coffee",
+    "description": "Espresso shots mixed with milk and sweet caramel syrup over ice, topped with whipped cream.",
+    "options": [
+      {
+        "name": "Size",
+        "choices": [
+          { "label": "Regular", "price": 0 },
+          { "label": "Large", "price": 40 }
+        ]
+      },
+      {
+        "name": "Milk",
+        "choices": [
+          { "label": "Regular", "price": 0 },
+          { "label": "Almond", "price": 20 },
+          { "label": "Oat", "price": 20 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dr004",
+    "name": "Sparkling Lemonade",
+    "category": "Drinks",
+    "price": 89,
+    "veg": true,
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9d?w=600&h=400&fit=crop",
+    "short": "Refreshing fizzy lemonade",
+    "description": "Homemade lemonade with sparkling water, fresh mint, and a splash of lime. Perfectly refreshing.",
+    "options": [
+      {
+        "name": "Add-on",
+        "choices": [
+          { "label": "None", "price": 0 },
+          { "label": "Fresh Mint", "price": 10 },
+          { "label": "Ginger", "price": 15 }
+        ]
+      }
+    ]
+  }
+]
