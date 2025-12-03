@@ -1,0 +1,25 @@
+.menu-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.menu-page h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.menu-page .item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.menu-page .item .item-name {
+  font-weight: bold;
+}
+
+.menu-page .item .item-price {
+  float: right;
+  color: #28a745;
+}
