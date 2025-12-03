@@ -29,6 +29,8 @@ export interface MenuItem {
   description: string;
   options?: ItemOption[];
   popular?: boolean;
+  history?: string;
+  ingredients?: string[];
 }
 
 /**

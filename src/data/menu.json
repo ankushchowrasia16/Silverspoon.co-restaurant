@@ -1,43 +1,49 @@
 [
   {
     "id": "m001",
-    "name": "Margherita Pizza",
+    "name": "Butter Chicken",
     "category": "Main Course",
-    "price": 249,
-    "veg": true,
-    "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=400&fit=crop",
-    "short": "Classic cheese & basil",
-    "description": "12-inch stone-baked Margherita with fresh mozzarella, San Marzano tomatoes, and aromatic basil. Drizzled with extra virgin olive oil.",
+    "price": 349,
+    "veg": false,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+    "short": "Creamy tomato curry with tender chicken",
+    "description": "Succulent pieces of tandoori chicken simmered in a rich, creamy tomato-based gravy with aromatic spices and butter. A North Indian classic served with naan or rice.",
     "popular": true,
+    "history": "Butter Chicken was invented in the 1950s by Kundan Lal Gujral at Moti Mahal restaurant in Delhi. It was created as a way to use leftover tandoori chicken by cooking it in a rich tomato-butter gravy.",
+    "ingredients": ["Chicken", "Tomatoes", "Cream", "Butter", "Kashmiri red chili", "Garam masala", "Kasuri methi"],
     "options": [
       {
-        "name": "Size",
+        "name": "Spice Level",
         "choices": [
-          { "label": "Regular (12\")", "price": 0 },
-          { "label": "Large (16\")", "price": 80 }
+          { "label": "Mild", "price": 0 },
+          { "label": "Medium", "price": 0 },
+          { "label": "Hot", "price": 0 }
         ]
       },
       {
-        "name": "Crust",
+        "name": "Side",
         "choices": [
-          { "label": "Thin", "price": 0 },
-          { "label": "Thick", "price": 30 }
+          { "label": "Naan", "price": 0 },
+          { "label": "Rice", "price": 0 },
+          { "label": "Both", "price": 40 }
         ]
       }
     ]
   },
   {
     "id": "m002",
-    "name": "Chicken Tikka Masala",
+    "name": "Paneer Tikka Masala",
     "category": "Main Course",
-    "price": 349,
-    "veg": false,
-    "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=400&fit=crop",
-    "short": "Creamy tomato curry with tender chicken",
-    "description": "Succulent tandoor-grilled chicken in a rich, creamy tomato-based curry with aromatic spices. Served with basmati rice or naan.",
+    "price": 299,
+    "veg": true,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop",
+    "short": "Grilled cottage cheese in rich gravy",
+    "description": "Char-grilled paneer cubes cooked in a creamy tomato-onion gravy with bell peppers, aromatic spices and fresh cream. A vegetarian delight.",
     "popular": true,
+    "history": "Paneer Tikka Masala is a popular vegetarian adaptation of the famous Chicken Tikka Masala, originating from North Indian cuisine.",
+    "ingredients": ["Paneer (cottage cheese)", "Yogurt", "Tomatoes", "Onions", "Bell peppers", "Cream", "Indian spices"],
     "options": [
       {
         "name": "Spice Level",
@@ -59,27 +65,60 @@
   },
   {
     "id": "m003",
-    "name": "Caesar Salad",
-    "category": "Starters",
-    "price": 199,
-    "veg": true,
-    "rating": 4.3,
-    "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop",
-    "short": "Crispy romaine with parmesan",
-    "description": "Fresh romaine lettuce tossed with homemade Caesar dressing, crispy croutons, and shaved parmesan cheese.",
+    "name": "Chicken Biryani",
+    "category": "Main Course",
+    "price": 379,
+    "veg": false,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+    "short": "Aromatic basmati rice with spiced chicken",
+    "description": "Fragrant basmati rice layered with marinated chicken, caramelized onions, saffron, and aromatic spices. Slow-cooked to perfection and served with raita.",
+    "popular": true,
+    "history": "Biryani has Persian origins and was brought to India by Mughal rulers. It evolved into various regional styles, with Hyderabadi and Lucknowi biryani being the most famous.",
+    "ingredients": ["Basmati rice", "Chicken", "Yogurt", "Onions", "Saffron", "Biryani spices", "Ghee"],
     "options": [
       {
-        "name": "Add Protein",
+        "name": "Size",
+        "choices": [
+          { "label": "Regular", "price": 0 },
+          { "label": "Large", "price": 80 }
+        ]
+      },
+      {
+        "name": "Extra",
         "choices": [
           { "label": "None", "price": 0 },
-          { "label": "Grilled Chicken", "price": 80 },
-          { "label": "Grilled Shrimp", "price": 120 }
+          { "label": "Extra Raita", "price": 30 },
+          { "label": "Boiled Egg", "price": 25 }
         ]
       }
     ]
   },
   {
     "id": "m004",
+    "name": "Dal Makhani",
+    "category": "Main Course",
+    "price": 249,
+    "veg": true,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=600&h=400&fit=crop",
+    "short": "Creamy black lentils slow-cooked overnight",
+    "description": "Slow-cooked black lentils and kidney beans in a rich, creamy tomato-based gravy with butter and cream. A Punjabi delicacy that melts in your mouth.",
+    "history": "Dal Makhani originated in Punjab and was popularized by Moti Mahal restaurant in Delhi. Traditionally, it's slow-cooked overnight for maximum flavor.",
+    "ingredients": ["Black lentils (urad dal)", "Kidney beans", "Tomatoes", "Butter", "Cream", "Ginger-garlic", "Spices"],
+    "options": [
+      {
+        "name": "Side",
+        "choices": [
+          { "label": "Naan", "price": 0 },
+          { "label": "Rice", "price": 0 },
+          { "label": "Both", "price": 40 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s001",
     "name": "Paneer Tikka",
     "category": "Starters",
     "price": 229,
@@ -89,6 +128,8 @@
     "short": "Grilled cottage cheese skewers",
     "description": "Marinated cottage cheese cubes grilled to perfection with bell peppers and onions, served with mint chutney.",
     "popular": true,
+    "history": "Paneer Tikka is a popular North Indian appetizer, originating from Punjab. It's the vegetarian version of the famous Chicken Tikka.",
+    "ingredients": ["Paneer", "Yogurt", "Bell peppers", "Onions", "Tandoori spices", "Lemon juice"],
     "options": [
       {
         "name": "Portion",
@@ -100,167 +141,254 @@
     ]
   },
   {
-    "id": "m005",
-    "name": "Crispy Chicken Wings",
+    "id": "s002",
+    "name": "Samosa (2 pcs)",
     "category": "Starters",
-    "price": 279,
-    "veg": false,
+    "price": 59,
+    "veg": true,
     "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=600&h=400&fit=crop",
-    "short": "Spicy buffalo-style wings",
-    "description": "Crispy fried chicken wings tossed in your choice of sauce, served with ranch dip and celery sticks.",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
+    "short": "Crispy fried pastry with spiced potato filling",
+    "description": "Golden-fried triangular pastries stuffed with spiced potatoes, peas, and aromatic herbs. Served hot with tamarind and mint chutney.",
+    "popular": true,
+    "history": "Samosas have Middle Eastern origins but became an integral part of Indian cuisine. They're now one of India's most beloved street foods.",
+    "ingredients": ["Potatoes", "Green peas", "Cumin", "Coriander", "Garam masala", "All-purpose flour"],
     "options": [
       {
-        "name": "Sauce",
+        "name": "Quantity",
         "choices": [
-          { "label": "Buffalo", "price": 0 },
-          { "label": "BBQ", "price": 0 },
-          { "label": "Honey Garlic", "price": 0 },
-          { "label": "Plain", "price": 0 }
+          { "label": "2 pieces", "price": 0 },
+          { "label": "4 pieces", "price": 59 },
+          { "label": "6 pieces", "price": 118 }
         ]
       }
     ]
   },
   {
-    "id": "m006",
-    "name": "Spaghetti Carbonara",
-    "category": "Main Course",
-    "price": 329,
-    "veg": false,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=400&fit=crop",
-    "short": "Creamy pasta with bacon",
-    "description": "Traditional Italian pasta with crispy bacon, egg yolk, parmesan cheese, and black pepper in a rich cream sauce.",
+    "id": "s003",
+    "name": "Chole Bhature",
+    "category": "Starters",
+    "price": 179,
+    "veg": true,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=600&h=400&fit=crop",
+    "short": "Spicy chickpea curry with fluffy fried bread",
+    "description": "Tangy and spicy chickpea curry served with large, fluffy deep-fried bread. A hearty North Indian breakfast favorite.",
+    "history": "Chole Bhature originated in Punjab and is now a popular breakfast and street food across North India, especially in Delhi.",
+    "ingredients": ["Chickpeas", "Tomatoes", "Onions", "Chole masala", "All-purpose flour", "Yogurt"],
     "options": [
       {
-        "name": "Size",
+        "name": "Bhature",
+        "choices": [
+          { "label": "1 piece", "price": 0 },
+          { "label": "2 pieces", "price": 40 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s004",
+    "name": "Vada Pav",
+    "category": "Starters",
+    "price": 49,
+    "veg": true,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+    "short": "Mumbai's famous potato fritter burger",
+    "description": "Spicy mashed potato fritter sandwiched in a soft pav (bun) with chutneys and fried green chilies. Mumbai's iconic street food.",
+    "history": "Vada Pav was invented in 1966 by Ashok Vaidya near Dadar station in Mumbai. It's now synonymous with Mumbai street food culture.",
+    "ingredients": ["Potatoes", "Besan (gram flour)", "Garlic", "Green chilies", "Pav bread", "Chutneys"],
+    "options": [
+      {
+        "name": "Quantity",
+        "choices": [
+          { "label": "1 piece", "price": 0 },
+          { "label": "2 pieces", "price": 49 },
+          { "label": "3 pieces", "price": 98 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "s005",
+    "name": "Masala Dosa",
+    "category": "Starters",
+    "price": 149,
+    "veg": true,
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1694844422672-8e3af3442c84?w=600&h=400&fit=crop",
+    "short": "Crispy rice crepe with spiced potato filling",
+    "description": "Thin, crispy fermented rice and lentil crepe filled with spiced potato masala. Served with sambar, coconut chutney, and tomato chutney.",
+    "popular": true,
+    "history": "Masala Dosa originated in Udupi, Karnataka in the early 20th century. It's now one of South India's most iconic dishes, enjoyed worldwide.",
+    "ingredients": ["Rice", "Urad dal", "Potatoes", "Onions", "Curry leaves", "Mustard seeds", "Turmeric"],
+    "options": [
+      {
+        "name": "Type",
         "choices": [
           { "label": "Regular", "price": 0 },
-          { "label": "Large", "price": 70 }
+          { "label": "Paper Dosa", "price": 40 },
+          { "label": "Cheese Dosa", "price": 50 }
         ]
       }
     ]
   },
   {
-    "id": "m007",
-    "name": "Grilled Salmon",
-    "category": "Main Course",
-    "price": 499,
-    "veg": false,
-    "rating": 4.9,
-    "image": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&h=400&fit=crop",
-    "short": "Atlantic salmon with herbs",
-    "description": "Fresh Atlantic salmon fillet grilled to perfection, served with roasted vegetables and lemon butter sauce.",
-    "popular": true,
-    "options": [
-      {
-        "name": "Cooking",
-        "choices": [
-          { "label": "Medium", "price": 0 },
-          { "label": "Medium Well", "price": 0 },
-          { "label": "Well Done", "price": 0 }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "m008",
-    "name": "Vegetarian Buddha Bowl",
-    "category": "Main Course",
-    "price": 299,
+    "id": "s006",
+    "name": "Idli Sambhar",
+    "category": "Starters",
+    "price": 99,
     "veg": true,
     "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop",
-    "short": "Wholesome grain & veggie bowl",
-    "description": "Nutritious bowl with quinoa, roasted vegetables, chickpeas, avocado, and tahini dressing. A healthy and delicious option.",
+    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&h=400&fit=crop",
+    "short": "Steamed rice cakes with lentil soup",
+    "description": "Soft, fluffy steamed rice cakes served with aromatic lentil-vegetable soup, coconut chutney, and sambar powder.",
+    "history": "Idli is an ancient South Indian dish mentioned in texts dating back to 920 CE. It's a staple breakfast in South India, known for being light and nutritious.",
+    "ingredients": ["Rice", "Urad dal", "Toor dal", "Vegetables", "Tamarind", "Sambar spices"],
     "options": [
       {
-        "name": "Protein",
+        "name": "Quantity",
         "choices": [
-          { "label": "Chickpeas", "price": 0 },
-          { "label": "Tofu", "price": 30 },
-          { "label": "Falafel", "price": 50 }
+          { "label": "3 pieces", "price": 0 },
+          { "label": "5 pieces", "price": 40 }
         ]
       }
     ]
   },
   {
     "id": "d001",
-    "name": "Chocolate Lava Cake",
+    "name": "Gulab Jamun",
     "category": "Desserts",
-    "price": 179,
+    "price": 99,
     "veg": true,
     "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=600&h=400&fit=crop",
-    "short": "Warm molten chocolate center",
-    "description": "Decadent chocolate cake with a molten chocolate center, served warm with vanilla ice cream.",
+    "image": "https://images.unsplash.com/photo-1589828006272-2a2d58c9c626?w=600&h=400&fit=crop",
+    "short": "Soft milk dumplings in rose-scented syrup",
+    "description": "Soft, spongy milk-solid dumplings deep-fried and soaked in aromatic rose-cardamom sugar syrup. Served warm or cold.",
     "popular": true,
+    "history": "Gulab Jamun has Persian origins and came to India during the Mughal era. The name comes from 'gulab' (rose water) and 'jamun' (a berry it resembles).",
+    "ingredients": ["Khoya (milk solids)", "All-purpose flour", "Sugar", "Rose water", "Cardamom", "Ghee"],
     "options": [
       {
-        "name": "Add-on",
+        "name": "Quantity",
         "choices": [
-          { "label": "None", "price": 0 },
-          { "label": "Extra Ice Cream", "price": 40 },
-          { "label": "Whipped Cream", "price": 30 }
+          { "label": "2 pieces", "price": 0 },
+          { "label": "4 pieces", "price": 99 }
         ]
       }
     ]
   },
   {
     "id": "d002",
-    "name": "Tiramisu",
+    "name": "Rasgulla",
     "category": "Desserts",
-    "price": 199,
+    "price": 119,
     "veg": true,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=400&fit=crop",
-    "short": "Classic Italian coffee dessert",
-    "description": "Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder.",
-    "options": []
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1571167259098-3d0305e8e2c7?w=600&h=400&fit=crop",
+    "short": "Spongy cottage cheese balls in sugar syrup",
+    "description": "Light, spongy cottage cheese balls cooked in light sugar syrup. A Bengali delicacy that's refreshingly sweet.",
+    "history": "Rasgulla was created in Odisha but popularized by Bengali confectioner Nobin Chandra Das in the 19th century. There's still a friendly rivalry between Bengal and Odisha over its origin!",
+    "ingredients": ["Chhena (cottage cheese)", "Sugar", "Cardamom", "Rose water"],
+    "options": [
+      {
+        "name": "Quantity",
+        "choices": [
+          { "label": "3 pieces", "price": 0 },
+          { "label": "6 pieces", "price": 119 }
+        ]
+      }
+    ]
   },
   {
     "id": "d003",
-    "name": "Fruit Cheesecake",
+    "name": "Kheer (Rice Pudding)",
     "category": "Desserts",
-    "price": 189,
+    "price": 129,
+    "veg": true,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1596181245351-adf957c3ecf1?w=600&h=400&fit=crop",
+    "short": "Creamy rice pudding with cardamom & nuts",
+    "description": "Slow-cooked rice pudding made with milk, sugar, cardamom, and garnished with almonds, pistachios, and saffron strands.",
+    "history": "Kheer is one of India's oldest desserts, mentioned in ancient texts. It's traditionally prepared during festivals and special occasions across India.",
+    "ingredients": ["Basmati rice", "Milk", "Sugar", "Cardamom", "Saffron", "Nuts (almonds, pistachios)"],
+    "options": [
+      {
+        "name": "Serving",
+        "choices": [
+          { "label": "Cold", "price": 0 },
+          { "label": "Warm", "price": 0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d004",
+    "name": "Jalebi",
+    "category": "Desserts",
+    "price": 89,
     "veg": true,
     "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1533134242443-d4ea90594913?w=600&h=400&fit=crop",
-    "short": "Creamy cheesecake with berries",
-    "description": "Rich and creamy New York-style cheesecake topped with fresh mixed berries and berry compote.",
-    "options": []
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop",
+    "short": "Crispy sweet spirals in sugar syrup",
+    "description": "Crispy, deep-fried flour spirals soaked in saffron-infused sugar syrup. Best enjoyed hot and fresh.",
+    "popular": true,
+    "history": "Jalebi has Middle Eastern origins and came to India through ancient trade routes. It's now an integral part of Indian festivals and celebrations.",
+    "ingredients": ["All-purpose flour", "Yogurt", "Sugar", "Saffron", "Cardamom", "Ghee"],
+    "options": [
+      {
+        "name": "Weight",
+        "choices": [
+          { "label": "100g", "price": 0 },
+          { "label": "250g", "price": 135 }
+        ]
+      }
+    ]
   },
   {
     "id": "dr001",
-    "name": "Fresh Orange Juice",
+    "name": "Masala Chai",
     "category": "Drinks",
-    "price": 99,
+    "price": 49,
     "veg": true,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600&h=400&fit=crop",
-    "short": "Freshly squeezed orange juice",
-    "description": "Freshly squeezed orange juice packed with vitamin C. No added sugar or preservatives.",
+    "rating": 4.9,
+    "image": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&h=400&fit=crop",
+    "short": "Indian spiced tea with aromatic spices",
+    "description": "Traditional Indian tea brewed with black tea leaves, milk, sugar, and aromatic spices like cardamom, ginger, and cloves.",
+    "popular": true,
+    "history": "Masala Chai became popular in India during the British colonial era but the practice of adding spices to tea has ancient Ayurvedic roots.",
+    "ingredients": ["Black tea", "Milk", "Cardamom", "Ginger", "Cloves", "Black pepper", "Sugar"],
     "options": [
       {
         "name": "Size",
         "choices": [
-          { "label": "Regular (250ml)", "price": 0 },
-          { "label": "Large (400ml)", "price": 40 }
+          { "label": "Regular", "price": 0 },
+          { "label": "Large", "price": 20 }
+        ]
+      },
+      {
+        "name": "Sugar",
+        "choices": [
+          { "label": "Regular", "price": 0 },
+          { "label": "Less Sugar", "price": 0 },
+          { "label": "No Sugar", "price": 0 }
         ]
       }
     ]
   },
   {
     "id": "dr002",
-    "name": "Mango Smoothie",
+    "name": "Mango Lassi",
     "category": "Drinks",
     "price": 129,
     "veg": true,
-    "rating": 4.7,
-    "image": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=600&h=400&fit=crop",
-    "short": "Thick & creamy mango smoothie",
-    "description": "Thick and creamy smoothie made with fresh mangoes, yogurt, and a touch of honey.",
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1623331327399-1bdc8672f4e0?w=600&h=400&fit=crop",
+    "short": "Thick & creamy mango yogurt drink",
+    "description": "Thick, creamy smoothie made with fresh mangoes, yogurt, milk, and a touch of cardamom. Perfectly refreshing.",
     "popular": true,
+    "history": "Lassi originates from Punjab and has been consumed for thousands of years. Mango lassi is a sweeter variation that became popular in the 1960s.",
+    "ingredients": ["Mangoes", "Yogurt", "Milk", "Sugar", "Cardamom"],
     "options": [
       {
         "name": "Size",
@@ -273,49 +401,46 @@
   },
   {
     "id": "dr003",
-    "name": "Iced Caramel Latte",
+    "name": "Nimbu Pani (Lemonade)",
     "category": "Drinks",
-    "price": 149,
+    "price": 69,
     "veg": true,
-    "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=400&fit=crop",
-    "short": "Sweet & creamy coffee",
-    "description": "Espresso shots mixed with milk and sweet caramel syrup over ice, topped with whipped cream.",
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9d?w=600&h=400&fit=crop",
+    "short": "Refreshing Indian-style lemonade",
+    "description": "Freshly squeezed lemon juice with water, sugar, salt, and a hint of cumin. A perfect summer cooler.",
+    "history": "Nimbu Pani is India's traditional thirst quencher, consumed for centuries. It's known for its perfect balance of sweet, salty, and tangy flavors.",
+    "ingredients": ["Lemon juice", "Water", "Sugar", "Salt", "Cumin powder", "Black salt"],
     "options": [
       {
-        "name": "Size",
+        "name": "Type",
         "choices": [
-          { "label": "Regular", "price": 0 },
-          { "label": "Large", "price": 40 }
-        ]
-      },
-      {
-        "name": "Milk",
-        "choices": [
-          { "label": "Regular", "price": 0 },
-          { "label": "Almond", "price": 20 },
-          { "label": "Oat", "price": 20 }
+          { "label": "Sweet", "price": 0 },
+          { "label": "Salted", "price": 0 },
+          { "label": "Masala", "price": 10 }
         ]
       }
     ]
   },
   {
     "id": "dr004",
-    "name": "Sparkling Lemonade",
+    "name": "Fresh Sugarcane Juice",
     "category": "Drinks",
-    "price": 89,
+    "price": 79,
     "veg": true,
-    "rating": 4.4,
-    "image": "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9d?w=600&h=400&fit=crop",
-    "short": "Refreshing fizzy lemonade",
-    "description": "Homemade lemonade with sparkling water, fresh mint, and a splash of lime. Perfectly refreshing.",
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1546173159-315724a31696?w=600&h=400&fit=crop",
+    "short": "Freshly extracted pure sugarcane juice",
+    "description": "Freshly pressed sugarcane juice with a squeeze of lime and ginger. Naturally sweet and incredibly refreshing.",
+    "history": "Sugarcane juice has been consumed in India since ancient times. It's mentioned in Vedic texts and has been a popular street drink for centuries.",
+    "ingredients": ["Fresh sugarcane", "Lime", "Ginger", "Black salt"],
     "options": [
       {
         "name": "Add-on",
         "choices": [
-          { "label": "None", "price": 0 },
-          { "label": "Fresh Mint", "price": 10 },
-          { "label": "Ginger", "price": 15 }
+          { "label": "Plain", "price": 0 },
+          { "label": "With Ginger", "price": 10 },
+          { "label": "With Lemon", "price": 10 }
         ]
       }
     ]
