@@ -82,21 +82,21 @@ export const Hero: React.FC = () => {
               </svg>
             </button>
             <Link
-              to="/reservations"
+              to="/menu"
               className="btn-outline px-8 py-4 text-lg flex items-center gap-2"
-              aria-label="Make a reservation"
+              aria-label="View full menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
-              Reservation
+              Full Menu
             </Link>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 animate-fade-in animation-delay-600">
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-primary-600">50+</p>
+              <p className="text-4xl md:text-5xl font-bold text-primary-600">22+</p>
               <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-1">Menu Items</p>
             </div>
             <div>

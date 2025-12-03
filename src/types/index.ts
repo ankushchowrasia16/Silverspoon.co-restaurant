@@ -30,7 +30,11 @@ export interface MenuItem {
   options?: ItemOption[];
   popular?: boolean;
   history?: string;
-  ingredients?: string[];
+  ingredients?: string | string[];
+  preparation?: string;
+  serving?: string;
+  nutrition?: string;
+  trivia?: string;
 }
 
 /**

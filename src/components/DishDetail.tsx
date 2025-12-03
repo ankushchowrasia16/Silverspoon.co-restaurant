@@ -136,18 +136,24 @@ export const DishDetail = () => {
               )}
 
               {/* Ingredients */}
-              {dish.ingredients && dish.ingredients.length > 0 && (
+              {dish.ingredients && (
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Main Ingredients</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {dish.ingredients.map((ingredient, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
-                      >
-                        {ingredient}
-                      </span>
-                    ))}
+                  <div className="text-gray-700 dark:text-gray-300">
+                    {typeof dish.ingredients === 'string' ? (
+                      <p>{dish.ingredients}</p>
+                    ) : (
+                      <div className="flex flex-wrap gap-2">
+                        {dish.ingredients.map((ingredient: string, index: number) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                          >
+                            {ingredient}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

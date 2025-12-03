@@ -3,6 +3,7 @@ export { Contact } from './Contact';
 export { DishDetail } from './DishDetail';
 export { FAQ } from './FAQ';
 export { Home } from './Home';
+export { MenuPage } from './MenuPage';
 export { PrivacyPolicy } from './PrivacyPolicy';
 export { Reservations } from './Reservations';
 export { ShippingInfo } from './ShippingInfo';
