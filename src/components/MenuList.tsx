@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { MenuItem, MenuFilters } from '../types';
 import { MenuItemCard } from './MenuItemCard';
 import { ItemModal } from './ItemModal';
+import { AddToCartToast } from './AddToCartToast';
 import { useCart } from '../contexts/CartContext';
 
 interface MenuListProps {
@@ -26,6 +27,7 @@ export const MenuList: React.FC<MenuListProps> = ({ items, searchQuery }) => {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [flyingItem, setFlyingItem] = useState<string | null>(null);
+  const [showToast, setShowToast] = useState(false);
 
   // Update search from parent
   useMemo(() => {
@@ -96,6 +98,7 @@ export const MenuList: React.FC<MenuListProps> = ({ items, searchQuery }) => {
     const buttonId = `add-to-cart-${item.id}`;
     setFlyingItem(buttonId);
     addToCart(item, 1);
+    setShowToast(true);
     
     // Remove animation after it completes
     setTimeout(() => setFlyingItem(null), 600);
@@ -245,6 +248,9 @@ export const MenuList: React.FC<MenuListProps> = ({ items, searchQuery }) => {
           }}
         />
       )}
+
+      {/* Add to Cart Toast */}
+      <AddToCartToast show={showToast} onClose={() => setShowToast(false)} />
     </section>
   );
 };

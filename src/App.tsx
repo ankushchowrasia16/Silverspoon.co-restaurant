@@ -11,6 +11,7 @@ import {
   Home,
   AboutUs,
   Contact,
+  DishDetail,
   Reservations,
   FAQ,
   PrivacyPolicy,
@@ -57,6 +58,7 @@ function App() {
               <Route path="/" element={<Home searchQuery={searchQuery} />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/dish/:id" element={<DishDetail />} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />

@@ -1,5 +1,6 @@
 export { AboutUs } from './AboutUs';
 export { Contact } from './Contact';
+export { DishDetail } from './DishDetail';
 export { FAQ } from './FAQ';
 export { Home } from './Home';
 export { PrivacyPolicy } from './PrivacyPolicy';
