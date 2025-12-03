@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 import { formatPrice } from '../utils/helpers';
 import { AddToCartToast } from '../components/AddToCartToast';
-import menuData from '../data/menu.json';
+import menuDataOld from '../data/menu.json';
+import menuDataNew from '../data/menuComplete.json';
 import type { MenuItem } from '../types';
 
 export const DishDetail: React.FC = () => {
@@ -11,7 +12,11 @@ export const DishDetail: React.FC = () => {
   const { addToCart } = useCart();
   const [showToast, setShowToast] = useState(false);
 
-  const dish = menuData.find((item) => item.id === id) as MenuItem | undefined;
+  // Try to find dish in new data first, then fall back to old data
+  let dish = (menuDataNew as MenuItem[]).find((item) => item.id === id);
+  if (!dish) {
+    dish = (menuDataOld as MenuItem[]).find((item) => item.id === id);
+  }
 
   if (!dish) {
     return (
@@ -31,41 +36,11 @@ export const DishDetail: React.FC = () => {
     setShowToast(true);
   };
 
-  // Extended dish information
-  const dishHistory = {
-    'Margherita Pizza': 'Named after Queen Margherita of Italy, this classic pizza was created in 1889 in Naples. The colors represent the Italian flag: red (tomatoes), white (mozzarella), and green (basil).',
-    'Chicken Tikka Masala': 'A beloved Indo-British dish, believed to have been created in Glasgow in the 1970s. It combines the flavors of tandoori chicken with a rich, creamy tomato-based sauce.',
-    'Caesar Salad': 'Created by Italian-American chef Caesar Cardini in Tijuana, Mexico, in 1924. The original recipe didn\'t include anchovies!',
-    'Paneer Tikka': 'A popular Indian appetizer that originated in the Punjab region. Paneer (cottage cheese) is marinated in spices and grilled to perfection.',
-    'Crispy Chicken Wings': 'Buffalo wings were invented in 1964 at the Anchor Bar in Buffalo, New York, by Teressa Bellissimo.',
-    'Spaghetti Carbonara': 'A traditional Roman pasta dish dating back to the mid-20th century. The name comes from "carbonaro" (charcoal burner).',
-    'Grilled Salmon': 'Salmon has been a dietary staple for thousands of years, prized for its rich omega-3 fatty acids and delicate flavor.',
-    'Vegetarian Buddha Bowl': 'Named for its resemblance to Buddha\'s belly, this modern health bowl combines nutritious grains, vegetables, and protein.',
-    'Chocolate Lava Cake': 'Also known as molten chocolate cake, it was invented by French chef Michel Bras in 1981.',
-    'Tiramisu': 'Meaning "pick me up" in Italian, this coffee-flavored dessert originated in the Veneto region of Italy in the 1960s.',
-    'Fruit Cheesecake': 'Cheesecake has ancient origins, with the first recorded recipe dating back to ancient Greece around 230 AD.',
-    'Fresh Orange Juice': 'Oranges originated in Southeast Asia and have been cultivated for over 4,000 years.',
-    'Mango Smoothie': 'Mangoes have been cultivated in South Asia for thousands of years and are known as the "king of fruits."',
-    'Iced Caramel Latte': 'The caramel latte became popular in coffee shops in the 1980s, combining the richness of espresso with sweet caramel.',
-    'Sparkling Lemonade': 'Lemonade has been enjoyed since ancient Egypt, and the carbonated version became popular in the 19th century.'
-  };
-
-  const ingredients = {
-    'Margherita Pizza': 'Pizza dough, San Marzano tomatoes, fresh mozzarella, basil, olive oil',
-    'Chicken Tikka Masala': 'Chicken breast, yogurt, spices, tomatoes, cream, butter, garlic, ginger',
-    'Caesar Salad': 'Romaine lettuce, parmesan cheese, croutons, Caesar dressing, lemon',
-    'Paneer Tikka': 'Paneer cheese, bell peppers, onions, yogurt, spices, mint chutney',
-    'Crispy Chicken Wings': 'Chicken wings, flour, spices, buffalo sauce, ranch dressing',
-    'Spaghetti Carbonara': 'Spaghetti, bacon, eggs, parmesan cheese, black pepper, cream',
-    'Grilled Salmon': 'Salmon fillet, lemon, butter, herbs, vegetables',
-    'Vegetarian Buddha Bowl': 'Quinoa, chickpeas, avocado, roasted vegetables, tahini dressing',
-    'Chocolate Lava Cake': 'Dark chocolate, butter, eggs, sugar, flour, vanilla ice cream',
-    'Tiramisu': 'Ladyfingers, mascarpone cheese, coffee, cocoa powder, eggs, sugar',
-    'Fruit Cheesecake': 'Cream cheese, graham crackers, sugar, eggs, mixed berries',
-    'Fresh Orange Juice': 'Fresh oranges',
-    'Mango Smoothie': 'Fresh mangoes, yogurt, honey, ice',
-    'Iced Caramel Latte': 'Espresso, milk, caramel syrup, ice, whipped cream',
-    'Sparkling Lemonade': 'Lemons, sugar, sparkling water, mint'
+  // Format ingredients
+  const formatIngredients = (ingredients: string | string[] | undefined): string => {
+    if (!ingredients) return 'Fresh, high-quality ingredients selected by our chefs';
+    if (typeof ingredients === 'string') return ingredients;
+    return ingredients.join(', ');
   };
 
   return (
@@ -149,31 +124,83 @@ export const DishDetail: React.FC = () => {
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Additional Info - All 6 Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* History */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
               </svg>
               History
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              {dishHistory[dish.name as keyof typeof dishHistory] || 'A culinary masterpiece crafted with love and tradition.'}
+              {dish.history || 'A culinary masterpiece crafted with love and tradition.'}
             </p>
           </div>
 
           {/* Ingredients */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
               </svg>
-              Key Ingredients
+              Ingredients
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              {ingredients[dish.name as keyof typeof ingredients] || 'Fresh, high-quality ingredients selected by our chefs.'}
+              {formatIngredients(dish.ingredients)}
+            </p>
+          </div>
+
+          {/* Preparation */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+              </svg>
+              Preparation
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {dish.preparation || 'Expertly prepared using traditional cooking methods.'}
+            </p>
+          </div>
+
+          {/* Serving */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-4a1 1 0 100 2h.01a1 1 0 100-2H13zM9 9a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM7 8a1 1 0 000 2h.01a1 1 0 000-2H7z" clipRule="evenodd" />
+              </svg>
+              Serving
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {dish.serving || 'Served fresh and beautifully presented.'}
+            </p>
+          </div>
+
+          {/* Nutrition */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Nutrition
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {dish.nutrition || 'Nutritious ingredients for a balanced meal.'}
+            </p>
+          </div>
+
+          {/* Trivia */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+              Trivia
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {dish.trivia || 'An interesting dish with a unique story.'}
             </p>
           </div>
         </div>

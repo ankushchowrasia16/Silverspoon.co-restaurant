@@ -160,7 +160,16 @@ export const Header: React.FC<HeaderProps> = ({ onCartClick, onSearchChange }) =
                   location.pathname === '/' ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' : ''
                 }`}
               >
-                Menu
+                Home
+              </Link>
+              <Link
+                to="/menu"
+                onClick={() => setMenuOpen(false)}
+                className={`block px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${
+                  location.pathname === '/menu' ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' : ''
+                }`}
+              >
+                Full Menu
               </Link>
               <Link
                 to="/about"
