@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://github.com/ankushchowrasia"
+                href="https://github.com/ankushchowrasia16"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"

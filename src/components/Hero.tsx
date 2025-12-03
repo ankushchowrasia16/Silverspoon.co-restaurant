@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { scrollToElement } from '../utils/helpers';
 
 /**
@@ -11,6 +12,16 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
+      {/* Animated Background Image */}
+      <div 
+        className="absolute inset-0 opacity-10 dark:opacity-5"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          animation: 'zoom-in-out 20s ease-in-out infinite'
+        }}
+      />
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -70,6 +81,16 @@ export const Hero: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
+            <Link
+              to="/reservations"
+              className="btn-outline px-8 py-4 text-lg flex items-center gap-2"
+              aria-label="Make a reservation"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              Reservation
+            </Link>
           </div>
 
           {/* Stats */}

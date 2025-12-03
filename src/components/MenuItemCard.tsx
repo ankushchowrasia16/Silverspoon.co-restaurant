@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { MenuItem } from '../types';
 import { formatPrice } from '../utils/helpers';
 
@@ -12,6 +13,7 @@ interface MenuItemCardProps {
  * Menu item card component displaying item preview
  */
 export const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onViewDetails, onQuickAdd }) => {
+  const navigate = useNavigate();
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -110,24 +112,38 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, onViewDetails,
           {item.short}
         </p>
 
-        {/* Price and Add Button */}
+        {/* Price and Buttons */}
         <div className="flex items-center justify-between mt-auto">
           <span className="text-2xl font-bold text-primary-600">
             {formatPrice(item.price)}
           </span>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onQuickAdd(item);
-            }}
-            className="bg-primary-600 hover:bg-primary-700 text-white p-2 rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-            aria-label={`Add ${item.name} to cart`}
-            id={`add-to-cart-${item.id}`}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/dish/${item.id}`);
+              }}
+              className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 p-2 rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              aria-label={`View info for ${item.name}`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onQuickAdd(item);
+              }}
+              className="bg-primary-600 hover:bg-primary-700 text-white p-2 rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              aria-label={`Add ${item.name} to cart`}
+              id={`add-to-cart-${item.id}`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </article>
