@@ -21,7 +21,7 @@ export const Home: React.FC<HomeProps> = ({ searchQuery }) => {
       <div 
         className="fixed top-20 right-10 w-64 h-64 opacity-5 dark:opacity-10 pointer-events-none moving-bg z-0"
         style={{
-          backgroundImage: 'url(/shape-5.png)',
+          backgroundImage: 'url(/public/shape-5.png)',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat'
         }}

@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ onCartClick, onSearchChange }) =
           <Link to="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
               <img 
-                src="/favicon.png" 
+                src="/favicon/silverspoon.png" 
                 alt="Silver Spoon Logo" 
                 className="w-full h-full object-cover"
               />

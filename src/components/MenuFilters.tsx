@@ -1,7 +1,5 @@
 // MenuFilters.tsx
 
-import React from 'react';
-
 const MenuFilters = () => {
     return (
         <div>
